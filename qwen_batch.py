@@ -13,8 +13,8 @@ from tqdm import tqdm
 
 model_path = "Qwen/Qwen2.5-VL-7B-Instruct"
 lora_path = None
-# save_path = '/data/xdd/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/origin'
-lora_path = "/data/xdd/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/lora/cn_lora_fixed"
+# save_path = '/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/origin'
+lora_path = "/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/lora/cn_lora_fixed"
 
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
     model_path, torch_dtype=torch.bfloat16
@@ -27,7 +27,7 @@ if lora_path is not None:
     save_path = lora_path
 
 # from testing data
-testing_root = '/data/xdd/LLaMA-Factory/dataset/testing_dataset_modify'
+testing_root = '/LLaMA-Factory/dataset/testing_dataset_modify'
 ann_path = os.path.join(testing_root, 'test_v6_0715.json')
 image_root = os.path.join(testing_root, 'imgs')
 with open(ann_path, 'r') as f:

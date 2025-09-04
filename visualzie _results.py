@@ -26,12 +26,12 @@ MODELS_ours = {
     "cn_lora_fixed":"cn_lroa_fixed",
 }
 results_path = [
-        '/data/xdd/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/origin/result_new_test.json',
-        '/data/xdd/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/lora/origin_v3-s-sft/result_new_test.json',
-        '/data/xdd/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/lora/loragen-sft_0.5_2/result_new_test.json',
-        '/data/xdd/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/lora/loragen_fixed/result_new_test.json',
-        '/data/xdd/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/lora/cn-loragen-mixed-sft/result_new_test.json',
-        '/data/xdd/LLaMA-Factory/saves/cultrual_heritage/qwen2_5vl-7b/lora/cn_lora_fixed/result_new_test.json',
+        '/saves/cultrual_heritage/qwen2_5vl-7b/origin/result_new_test.json',
+        '/saves/cultrual_heritage/qwen2_5vl-7b/lora/origin_v3-s-sft/result_new_test.json',
+        '/saves/cultrual_heritage/qwen2_5vl-7b/lora/loragen-sft_0.5_2/result_new_test.json',
+        '/saves/cultrual_heritage/qwen2_5vl-7b/lora/loragen_fixed/result_new_test.json',
+        '/saves/cultrual_heritage/qwen2_5vl-7b/lora/cn-loragen-mixed-sft/result_new_test.json',
+        '/saves/cultrual_heritage/qwen2_5vl-7b/lora/cn_lora_fixed/result_new_test.json',
            ]
 
 #MODELS = {**MODELS_base, **MODELS_ours}
@@ -91,42 +91,6 @@ for name, r in results.items():
             'groundtruth': groundtruth,
             'model_answer': answer
         })
-
-# for d in results[0]:
-#     question = d['Question:']
-#     groundtruth = question.get('groundtruth', '').strip()
-#     question_type = question.get('question_type', 'unknown')
-    
-#     # Process each model
-#     for model_name, field_name in MODELS.items():
-#         model_answer = question.get(field_name, '').strip()
-        
-#         # Skip if no answer available
-#         if not model_answer:
-#             continue
-            
-#         stats = model_stats[model_name]
-#         stats['total_questions'] += 1
-        
-#         # Initialize type statistics
-#         if question_type not in stats['type_stats']:
-#             stats['type_stats'][question_type] = {'correct': 0, 'total': 0}
-        
-#         stats['type_stats'][question_type]['total'] += 1
-        
-#         # Check if correct
-#         is_correct = groundtruth == model_answer
-#         if is_correct:
-#             stats['correct_answers'] += 1
-#             stats['type_stats'][question_type]['correct'] += 1
-        
-#         # Save detailed results for further analysis
-#         stats['detailed_results'].append({
-#             'question_type': question_type,
-#             'is_correct': is_correct,
-#             'groundtruth': groundtruth,
-#             'model_answer': model_answer
-#         })
 
 # Calculate and display results for each model
 for model_name in MODELS.keys():
