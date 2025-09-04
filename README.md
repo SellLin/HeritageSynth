@@ -1,2 +1,2 @@
-This repo include training and evaluation scripts for project Synthetic Data Generation with Spatial and Semantic Fidelity for Multimodal Large Language Model on Architectural Heritage Interpretation, a clear walk through will be updated later.
+This repo includes training and evaluation scripts for project Synthetic Data Generation with Spatial and Semantic Fidelity for Multimodal Large Language Model on Architectural Heritage Interpretation, a clear walk through will be updated later.
 Model weights can be found in [Sellvestre/heritage_weights](https://huggingface.co/Sellvestre/heritage_adapter-Qwen_7B), and training dataset is avaliable at [Sellvestre/heritage_dataset](https://huggingface.co/datasets/Sellvestre/heritage_dataset).
